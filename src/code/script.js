@@ -1,3 +1,17 @@
+// Custom Cursor
+const cursor = document.querySelector('.cursor')
+const miniCursor = document.querySelector('.mini-cursor')
+
+document.addEventListener('mousemove', event => {
+  cursor.setAttribute("style", "top: " + (event.pageY - 14) + "px;" + 
+                               "left: " + (event.pageX - 14) + "px;")
+
+  miniCursor.setAttribute("style", "top: " + (event.pageY - 4) + "px;" + 
+                                   "left: " + (event.pageX - 4) + "px;")
+})
+
+
+
 // Light/Dark Mode button logic
 const body = document.querySelector('body')
 const themeButton = document.querySelector('.theme-button')
@@ -25,11 +39,7 @@ function load() {
   }
 }
 
-
-
-
-
-themeButton.addEventListener('click', () => {
+themeButton.addEventListener('click', event => {
   console.log('Switching to dark mode')
   body.classList.toggle('light-mode')
   themeIcon.classList.add('animated')

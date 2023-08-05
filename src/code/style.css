@@ -4,11 +4,13 @@
   --dark-background-color: #2b2b2b;
   --dark-text-color: #fff;
   --dark-icon-color: #fff;
+  --dark-secondary-color: #9500ff;
 
   /* Light Theme */
   --light-background-color: #fff;
   --light-text-color: #000;
   --light-icon-color: #f1c515;
+  --light-secondary-color: #ff6f00;
 }
 
 body {
@@ -16,7 +18,31 @@ body {
   margin: 0;
   background: linear-gradient(#141b25, #251a28);
 
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Monserrat', sans-serif;
+}
+
+.cursor {
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--dark-secondary-color);
+  border-radius: 50%;
+  position: absolute;
+  transition-duration: 100ms;
+  transition-timing-function: ease-out;
+  z-index: 99;
+  pointer-events: none;
+}
+
+.mini-cursor {
+  width: 8px;
+  height: 8px;
+  background-color: var(--dark-secondary-color);
+  border-radius: 50%;
+  position: absolute;
+  transition-duration: 66ms;
+  transition-timing-function: ease-out;
+  z-index: 99;
+  pointer-events: none;
 }
 
 .main-container {
@@ -31,11 +57,20 @@ body {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.logo {
+  scale: 0.8;
+  padding: 0.5rem 0 0 0.75rem;
+}
+
+.logo a img {
+  cursor: pointer;
 }
 
 .sections {
@@ -49,7 +84,7 @@ body {
 .sections > li {
   padding: 0.5rem 1.5rem;
   list-style-type: none;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
 .sections > li > a {
@@ -62,7 +97,7 @@ body {
 }
 
 .sections > li > a:hover {
-  color: #00f2ff;
+  color: var(--dark-secondary-color);
 }
 
 .landing-page {
@@ -72,7 +107,7 @@ body {
 }
 
 .landing-content {
-  height: 100vh;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
@@ -84,8 +119,8 @@ body {
 
 .name-title {
   font-size: 100px;
-  font-weight: 800;
-  letter-spacing: 10px;
+  font-weight: 700;
+  letter-spacing: 5px;
   text-transform: uppercase;
 }
 
@@ -97,23 +132,103 @@ body {
 
 .socials-container {
   width: 100%;
+  position: absolute;
+  bottom: 1rem;
+
+  display: flex;
+  justify-content: center;
 }
 
 .socials-container ul {
   display: flex;
   flex-direction: row;
   list-style: none;
+
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 0.5rem 3rem;
 }
 
-.socials-container ul li {
-  color: #fff;
-  width: 50px;
-  height: 50px;
+.socials-container ul li img {
+  width: 35px;
+  height: 35px;
+  margin-right: 2.5rem;
+  transition: all 0.3s ease;
+
+  /* animation-name: infiniteupdown;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  transition: all 0.3s; */
 }
 
-.socials-container ul li i {
-  width: 100%;
-  height: 100%;
+.socials-container ul li:hover img {
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+@keyframes infiniteupdown {
+  0% {
+    transform: translateY(1.5px);
+  }
+
+  50% {
+    transform: translateY(-1.5px);
+  }
+
+  100% {
+    transform: translateY(1.5px);
+  }
+}
+
+.socials-container ul li:last-child img {
+  margin-right: 0;
+}
+
+.github-icon {
+  filter: invert(100%);
+}
+
+
+.section-container {
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title {
+  text-align: center;
+  text-transform: uppercase;
+
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: var(--dark-secondary-color);
+}
+
+.section-content {
+  width: 60%;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.skills-container {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.skill {
+  margin: -0.75rem 0;
+  padding: 0 0.5rem;
+  /* border: 1px solid red; */
+}
+
+.skill p {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
 }
 
 
@@ -180,6 +295,14 @@ body.light-mode {
   background: #fff;
 }
 
+.light-mode .cursor {
+  border: 1px solid var(--light-secondary-color);
+}
+
+.light-mode .mini-cursor {
+  background-color: var(--light-secondary-color);
+}
+
 .light-mode .indicator {
   transform: translateX(1.75rem);
   background-color: #fff;
@@ -187,6 +310,10 @@ body.light-mode {
 
 .light-mode .theme-icon {
   color: var(--light-icon-color);
+}
+
+.light-mode .github-icon {
+  filter: initial;
 }
 
 
