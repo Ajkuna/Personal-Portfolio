@@ -4,7 +4,7 @@
   --dark-background-color: #2b2b2b;
   --dark-text-color: #fff;
   --dark-icon-color: #fff;
-  --dark-secondary-color: #9500ff;
+  --dark-secondary-color: rgb(149, 0, 255);
 
   /* Light Theme */
   --light-background-color: #fff;
@@ -16,9 +16,9 @@
 body {
   padding: 0;
   margin: 0;
-  background: linear-gradient(#141b25, #251a28);
+  background-color: #000;
 
-  font-family: 'Monserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .cursor {
@@ -46,14 +46,13 @@ body {
 }
 
 .main-container {
-  color: #fff;
+  color: var(--dark-text-color);
 }
 
 .navbar {
   position: absolute;
   width: 100%;
   top: 0;
-  color: #fff;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -73,7 +72,7 @@ body {
   cursor: pointer;
 }
 
-.sections {
+.page-links {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -81,33 +80,49 @@ body {
   text-align: center;
 }
 
-.sections > li {
-  padding: 0.5rem 1.5rem;
+.page-links > li {
+  padding: 0.5rem;
   list-style-type: none;
   /* border: 1px solid blue; */
 }
 
-.sections > li > a {
+.page-links > li > a {
+  padding: 0.5rem 1rem;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 1px;
-  color: #fff;
+  color: var(--dark-text-color);
+  transition: all 0.75s ease;
 }
 
-.sections > li > a:hover {
-  color: var(--dark-secondary-color);
+.page-links:hover li:not(:hover) a {
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.75s ease;
+}
+
+.page-links li:hover a {
+  background-color: var(--dark-secondary-color);
+  border-radius: 10px;
+  transition: all 0.75s ease;
 }
 
 .landing-page {
   height: 100vh;
-  /* background: linear-gradient(#141b25, #251a28); */
-  color: #fff;
+  background-image: url("../assets/minimalist_landscape.png");
+
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .landing-content {
   height: 100%;
+  z-index: 99;
 
   display: flex;
   flex-direction: column;
@@ -189,6 +204,9 @@ body {
   filter: invert(100%);
 }
 
+.about-me {
+  background: linear-gradient(0deg, rgba(249,169,157,1) 0%, rgba(233,87,151,1) 25%, rgba(38,34,98,1) 45%);
+}
 
 .section-container {
   padding: 3.5rem;
@@ -212,7 +230,7 @@ body {
   font-weight: 500;
 }
 
-.skills-container {
+/* .skills-container {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -222,13 +240,60 @@ body {
 .skill {
   margin: -0.75rem 0;
   padding: 0 0.5rem;
-  /* border: 1px solid red; */
 }
 
 .skill p {
   background-color: rgba(255, 255, 255, 0.2);
   padding: 0.5rem 1rem;
   border-radius: 10px;
+} */
+
+.skills-container {
+  width: 100%;
+  margin-top: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid white; */
+}
+
+.skills-container ul {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border-radius: 15px;
+
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  background: rgba(149, 0, 255, 0.2);
+  /* border: 1px solid red; */
+}
+
+.skills-container ul li {
+  padding: 1rem;
+  width: 33.3%;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.skill-selected {
+  background-color: var(--dark-secondary-color);
+  border-radius: 10px 10px 0 0 ;
+}
+
+.skill-display {
+  display: none;
+  visibility: hidden;
+
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 40px;
 }
 
 
@@ -292,7 +357,12 @@ body {
 }
 
 body.light-mode {
-  background: #fff;
+  background: linear-gradient(167deg, rgba(148,187,233,1) 0%, rgba(238,187,174,1) 100%);
+}
+
+.light-mode .main-container, 
+.light-mode .page-links > li > a {
+  color: var(--light-text-color);
 }
 
 .light-mode .cursor {
@@ -336,4 +406,11 @@ body.light-mode {
   background: #252525;
   border-radius: 10px;
   border: 3px solid rgb(85, 85, 85);
+}
+
+@media screen and (max-width: 1440px) {
+  .cursor, .mini-cursor {
+    display: none;
+    visibility: hidden;
+  }
 }

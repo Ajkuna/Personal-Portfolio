@@ -37,6 +37,26 @@ function load() {
   } else {
     themeIcon.classList.add('fa-moon')
   }
+
+  // Set default skill section (about me)
+  // const defaultSkill = 'languages'
+
+  // const sectionTitles = document.querySelectorAll('.single-skill')
+  // sectionTitles.forEach(title => {
+  //   if (title.id == defaultSkill) {
+  //     title.classList.add('skill-selected')
+  //     title.style = 'font-size: 16px; font-weight: 600;'
+  //   } else {
+  //     title.classList.remove('skill-selected')
+  //     title.style = 'font-size: 14px; font-weight: 500;'
+  //   }
+  // })
+
+  // const sections = document.querySelectorAll('.skill-display')
+  // sections.forEach(item => {
+  //   item.style.display = item.id == defaultSkill ? 'block' : 'none'
+  //   item.style.visibility = item.id == defaultSkill ? 'visible' : 'hidden'
+  // })
 }
 
 themeButton.addEventListener('click', event => {
@@ -60,3 +80,27 @@ themeButton.addEventListener('click', event => {
     themeIcon.classList.remove('animated')
   }, 500)
 })
+
+
+// Skills Sections dynamic display
+function displaySkillSection() {
+  const selectedSection = event.target.id
+  console.log('User selected: ' + selectedSection)
+
+  const sectionTitles = document.querySelectorAll('.single-skill')
+  sectionTitles.forEach(title => {
+    if (title.id == selectedSection) {
+      title.classList.add('skill-selected')
+      title.style = 'font-size: 16px; font-weight: 600;'
+    } else {
+      title.classList.remove('skill-selected')
+      title.style = 'font-size: 14px; font-weight: 500;'
+    }
+  })
+
+  const sections = document.querySelectorAll('.skill-display')
+  sections.forEach(item => {
+    item.style.display = item.id == selectedSection ? 'block' : 'none'
+    item.style.visibility = item.id == selectedSection ? 'visible' : 'hidden'
+  })
+}

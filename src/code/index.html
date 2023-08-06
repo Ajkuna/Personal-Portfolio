@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Google Font (Monserrat) -->
+  <!-- Google Font (Montserrat) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -28,6 +28,8 @@
     <div class="cursor"></div>
     <div class="mini-cursor"></div>
 
+    <div class="landing-background"></div>
+
     <!-- Home -->
     <div class="landing-page" id="home">
 
@@ -40,11 +42,11 @@
         </div>
 
         <!-- Navbar button links -->
-        <ul class="sections">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
+        <ul class="page-links">
+          <li class="single-link"><a href="#home">Home</a></li>
+          <li class="single-link"><a href="#about">About Me</a></li>
+          <li class="single-link"><a href="#experience">Experience</a></li>
+          <li class="single-link"><a href="#projects">Projects</a></li>
         </ul>
 
         <!-- Theme Switch  Button -->
@@ -107,51 +109,37 @@
     </div>
 
     <!-- About Me -->
-    <div class="background" id="about">
+    <div class="about-me" id="about">
       <div class="section-container">
         
-        <h1 class="section-title">Background</h1>
+        <h1 class="section-title">About Me</h1>
 
         <div class="section-content">
-          <p>I'm currently a Full Stack Developer at Deloitte Consulting, collaborating with a team of amazing people in the development of an e-commerce website.</p>
+          <p>I'm currently a <b>Full Stack Developer</b> at <b>Deloitte Consulting</b>, building an e-commerce website with a team of amazing people.</p>
 
-          <p>As a Software Engineer, I enjoy bridging the gap between engineering and design, combining my technical knowledge with my keen eye for design to create beatiful products.
-            My goal is to always build applications that are scalable and efficient under the hood while providing engaging,
+          <p>As a Software Engineer, I enjoy bridging the gap between engineering and design, combining my <b>technical knowledge</b> with my keen eye for <b>design</b> to create beatiful products.
+            My goal is to always build applications that are <b>scalable and efficient</b> under the hood while providing engaging,
             pixel-perfect user experiences. </p> 
 
-          <p>My extreme curiosity lead me, over the years, to gain knowledge on different types of tools and technologies and to experience many shades of development.
+          <p>My extreme <b>curiosity</b> lead me, over the years, to gain knowledge on different types of tools and technologies and to experience and practice with many aspects of development.
             <br> Here's some of them:
           </p>
 
-          <ul class="skills-container">
-            <li class="skill">
-              <p>Java</p>
-            </li>
-            <li class="skill">
-              <p>Python</p>
-            </li>
-            <li class="skill">
-              <p>JavaScript</p>
-            </li>
-            <li class="skill">
-              <p>HTML</p>
-            </li>
-            <li class="skill">
-              <p>CSS</p>
-            </li>
-            <li class="skill">
-              <p>SQL</p>
-            </li>
-            <li class="skill">
-              <p>Apex</p>
-            </li>
-            <li class="skill">
-              <p>Kotlin</p>
-            </li>
-            <li class="skill">
-              <p>C</p>
-            </li>
-          </ul>
+          <!-- <div class="skills-container">
+            <ul class="skills-titles">
+              <li class="single-skill skill-selected" id="languages" onclick="displaySkillSection()">Languages</li>
+              <li class="single-skill" id="frameworks" onclick="displaySkillSection()">Frameworks</li>
+              <li class="single-skill" id="tools" onclick="displaySkillSection()">Tools</li>
+            </ul>
+
+            <div class="skill-display" id="languages">
+              Languages here!
+            </div>
+
+            <div class="skill-display" id="frameworks">Frameworks here!</div>
+            <div class="skill-display" id="tools">Tools here!</div>
+          </div> -->
+
         </div>
 
       </div>
