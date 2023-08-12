@@ -104,3 +104,56 @@ function displaySkillSection() {
     item.style.visibility = item.id == selectedSection ? 'visible' : 'hidden'
   })
 }
+
+
+// Job Cards
+function handleJobCards() {
+  console.log('Dealing with JOBS!')
+  const selectedJob = event.target.id
+  console.log('User selected this job: ' + selectedJob)
+  const jobIcon = document.querySelector('.inner-icon')
+  if (jobIcon.classList.contains('fa-plus')) {
+    // setThemeValue(false)
+    jobIcon.classList.remove('fa-plus')
+    jobIcon.classList.add('fa-minus')
+  } else {
+    // setThemeValue(true)
+    jobIcon.classList.remove('fa-minus')
+    jobIcon.classList.add('fa-plus')
+  }
+
+  const jobs = document.querySelectorAll('.job-card')
+  jobs.forEach(item => {
+    if (item.id == selectedJob && jobIcon.classList.contains('fa-minus')) {
+      item.classList.remove('hide')
+    } else {
+      item.classList.add('hide')
+    }
+  })
+}
+
+function handleCardDetails() {
+  const currentJob = event.target.id
+  const moreDetails = document.querySelectorAll('.more-details')
+  const detailsSections = document.querySelectorAll('.extra-info')
+  let changeDetails = false
+
+  detailsSections.forEach(item => {
+    if (item.id == currentJob) {
+      if (item.classList.contains('hide')) {
+        item.classList.remove('hide')
+        changeDetails = true
+      } else {
+        item.classList.add('hide')
+      }
+    }
+  })
+
+  moreDetails.forEach(item => {
+    if (changeDetails) {
+      item.innerHTML = 'Less Details'
+    } else {
+      item.innerHTML = 'More Details...'
+    }
+  })
+}

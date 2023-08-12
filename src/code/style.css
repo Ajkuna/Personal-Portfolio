@@ -4,7 +4,7 @@
   --dark-background-color: #2b2b2b;
   --dark-text-color: #fff;
   --dark-icon-color: #fff;
-  --dark-secondary-color: rgb(149, 0, 255);
+  --dark-secondary-color: #FF7538;
 
   /* Light Theme */
   --light-background-color: #fff;
@@ -16,7 +16,7 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: #000;
+  background: linear-gradient(167deg, rgb(27, 37, 54) 100%, rgb(44, 17, 61) 0%);
 
   font-family: 'Montserrat', sans-serif;
 }
@@ -110,7 +110,7 @@ body {
 
 .landing-page {
   height: 100vh;
-  background-image: url("../assets/minimalist_landscape.png");
+  background-image: url("../assets/backgrounds/sunset_wallpaper.jpg");
 
   /* filter: blur(8px);
   -webkit-filter: blur(8px); */
@@ -182,6 +182,10 @@ body {
   transition: all 0.3s ease;
 }
 
+.socials-container ul:hover li:not(:hover) a img {
+  opacity: 0.5;
+}
+
 @keyframes infiniteupdown {
   0% {
     transform: translateY(1.5px);
@@ -205,7 +209,9 @@ body {
 }
 
 .about-me {
-  background: linear-gradient(0deg, rgba(249,169,157,1) 0%, rgba(233,87,151,1) 25%, rgba(38,34,98,1) 45%);
+  /* background: linear-gradient(0deg, rgba(249,169,157,1) 0%, rgba(233,87,151,1) 25%, rgba(38,34,98,1) 45%); */
+  /* background: linear-gradient(0deg, rgba(61,93,152,1) 0%, rgba(23,24,55,1) 48%); */
+  /* background-color: rgba(23,24,55,1); */
 }
 
 .section-container {
@@ -296,6 +302,163 @@ body {
   padding-top: 40px;
 }
 
+/* Work Experience sections */
+.experience {
+  /* background-color: rgb(23,24,55); */
+}
+
+.job-header {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  border-radius: 8px;
+  background-color: rgb(15, 16, 39);
+  border: 1px solid white;
+}
+
+.job-title {
+  width: 65%;
+  border: 1px solid orange;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1.5rem;
+}
+
+.job-position, .employer {
+  margin: 0;
+}
+
+.job-position {
+  font-weight: 700;
+}
+
+.employer {
+  padding-top: 0.25rem;
+  font-style: oblique;
+}
+
+.job-period {
+  width: 25%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  border: 1px solid aqua;
+}
+
+.job-icon {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.job-icon i {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.job-icon i:hover {
+  color: var(--dark-secondary-color);
+  transition: all 0.3s ease;
+}
+
+
+/* Job Card */
+.job-card {
+  width: 60%;
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: row;
+  border-radius: 8px;
+  border: 1px solid white;
+  padding: 1.5rem;
+  background-color: rgba(15, 16, 39, 0.3);
+}
+
+.left-side {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 2rem;
+}
+
+.job-location {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* border: 1px solid blue; */
+  margin-top: -1rem;
+}
+
+.location-icon {
+  color: var(--dark-secondary-color);
+}
+
+.job-location p {
+  padding-left: 1rem;
+}
+
+.more-details {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.more-details:hover {
+  color: var(--dark-secondary-color);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.hide {
+  display: none;
+  visibility: hidden;
+}
+
+.job-skills ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* border: 1px solid red; */
+  padding: 0;
+  margin: 0;
+}
+
+.job-skills ul li {
+  margin: 0 0.5rem 0.75rem 0;
+  padding: 0.25rem 0.75rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--dark-secondary-color);
+  border-radius: 15px;
+}
+
+.right-side {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-logo {
+  width: 90%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Light/Dark Mode button (toggle-like) */
 .theme-area {
@@ -358,6 +521,10 @@ body {
 
 body.light-mode {
   background: linear-gradient(167deg, rgba(148,187,233,1) 0%, rgba(238,187,174,1) 100%);
+}
+
+.light-mode .landing-page {
+  background-image: url("../assets/backgrounds/dawn_wallpaper.jpg");
 }
 
 .light-mode .main-container, 
