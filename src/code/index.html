@@ -149,55 +149,159 @@
 
       <div class="section-container">
 
-        <div class="job-header" id="deloitte">
-          <div class="job-title">
-            <p class="job-position">Full Stack Developer</p>
-            <p class="employer">Deloitte</p>
-          </div>
-          <div class="job-period">Dec 2022 - Present</div>
-          <div class="job-icon">
-            <i class="inner-icon fa-solid fa-plus" id="deloitte" onclick="handleJobCards()"></i>
-          </div>
-        </div>
+        <h1 class="section-title">Experience</h1>
 
-        <div class="job-card hide" id="deloitte">
-          <div class="left-side">
-            <!-- Job Location -->
-            <div class="job-location">
-              <i class="location-icon fa-solid fa-location-dot"></i>
-              <p>Remote (Italy)</p>
+        <div class="section-content">
+
+          <!-- Deloitte Job -->
+          <div class="job-header open-header" id="deloitte">
+            <div class="job-title">
+              <p class="job-position">Full Stack Developer</p>
+              <p class="employer">Deloitte</p>
             </div>
-
-            <!-- Job Description -->
-            <div class="job-description" id="job-description">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et cumque reprehenderit nesciunt obcaecati voluptas asperiores odit praesentium sunt impedit facilis optio dolore, ea incidunt sit quam.
-              <p class="more-details" id="deloitte" onclick="handleCardDetails()">More Details...</p>
-              
-              <ul class="extra-info hide" id="deloitte">
-                <li>Aliquam ipsum neque explicabo quo, nesciunt quisquam, illo quas sint tempore distinctio harum delectus magnam.</li>
-                <li>Facere delectus error, sapiente saepe cumque dolorem assumenda dolores provident sequi odio qui omnis, inventore temporibus nemo ratione ducimus, tempore adipisci maiores quisquam atque culpa quae praesentium?</li>
-                <li>Aliquam, hic aspernatur rem distinctio sunt eaque unde inventore corrupti officiis perspiciatis nesciunt excepturi quo veritatis dolorem nemo repellendus, incidunt in saepe repudiandae ad sint culpa.</li>
-                <li>Blanditiis saepe sint odit obcaecati soluta optio est repudiandae nihil ullam, expedita, officia cumque, vel exercitationem maiores eaque nam fugiat.</li>
-              </ul>
-            </div>
-
-            <!-- Job Skills -->
-            <div class="job-skills">
-              <ul>
-                <li>Apex/Java</li>
-                <li>JavaScript</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>SQL</li>
-                <li>Azure DevOps</li>
-                <li>GitHub</li>
-                <li>Salesforce Lightning</li>
-              </ul>
+            <div class="job-period">Dec 2022 - Present</div>
+            <div class="job-icon">
+              <i class="inner-icon fa-solid fa-minus" id="deloitte" onclick="handleJobCards()"></i>
             </div>
           </div>
-          <div class="right-side">
-            <img class="company-logo" src="../assets/companies/deloitte_logo_white.png" alt="Deloitte">
+
+          <div class="job-card" id="deloitte">
+            <div class="left-side">
+              <!-- Job Location -->
+              <div class="job-location">
+                <i class="location-icon fa-solid fa-location-dot"></i>
+                <p>Remote (Italy)</p>
+              </div>
+
+              <!-- Job Description -->
+              <div class="job-description" id="job-description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et cumque reprehenderit nesciunt obcaecati voluptas asperiores odit praesentium sunt impedit facilis optio dolore, ea incidunt sit quam.
+                <p class="more-details" id="deloitte" onclick="handleCardDetails()">More Details...</p>
+                
+                <ul class="extra-info hide" id="deloitte">
+                  <li>Aliquam ipsum neque explicabo quo, nesciunt quisquam, illo quas sint tempore distinctio harum delectus magnam.</li>
+                  <li>Facere delectus error, sapiente saepe cumque dolorem assumenda dolores provident sequi odio qui omnis, inventore temporibus nemo ratione ducimus, tempore adipisci maiores quisquam atque culpa quae praesentium?</li>
+                  <li>Aliquam, hic aspernatur rem distinctio sunt eaque unde inventore corrupti officiis perspiciatis nesciunt excepturi quo veritatis dolorem nemo repellendus, incidunt in saepe repudiandae ad sint culpa.</li>
+                  <li>Blanditiis saepe sint odit obcaecati soluta optio est repudiandae nihil ullam, expedita, officia cumque, vel exercitationem maiores eaque nam fugiat.</li>
+                </ul>
+              </div>
+
+              <!-- Job Skills -->
+              <div class="job-skills">
+                <ul>
+                  <li>Apex/Java</li>
+                  <li>JavaScript</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>SQL</li>
+                  <li>Azure DevOps</li>
+                  <li>GitHub</li>
+                  <li>Salesforce Lightning</li>
+                  <li>UX/UI</li>
+                </ul>
+              </div>
+            </div>
+            <div class="right-side">
+              <img class="company-logo" src="../assets/companies/deloitte_logo_white.png" alt="Deloitte">
+            </div>
           </div>
+
+          <!-- Salesforce Job -->
+          <div class="job-header" id="salesforce">
+            <div class="job-title">
+              <p class="job-position">Salesforce Developer</p>
+              <p class="employer">Salesforce Industries</p>
+            </div>
+            <div class="job-period">Apr 2022 - July 2022</div>
+            <div class="job-icon">
+              <i class="inner-icon fa-solid fa-plus" id="salesforce" onclick="handleJobCards()"></i>
+            </div>
+          </div>
+
+          <div class="job-card hide" id="salesforce">
+            <div class="left-side">
+              <!-- Job Location -->
+              <div class="job-location">
+                <i class="location-icon fa-solid fa-location-dot"></i>
+                <p>Remote (Italy)</p>
+              </div>
+
+              <!-- Job Description -->
+              <div class="job-description" id="job-description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et cumque reprehenderit nesciunt obcaecati voluptas asperiores odit praesentium sunt impedit facilis optio dolore, ea incidunt sit quam.
+                <p class="more-details" id="salesforce" onclick="handleCardDetails()">More Details...</p>
+                
+                <ul class="extra-info hide" id="salesforce">
+                  <li>Aliquam ipsum neque explicabo quo, nesciunt quisquam, illo quas sint tempore distinctio harum delectus magnam.</li>
+                  <li>Facere delectus error, sapiente saepe cumque dolorem assumenda dolores provident sequi odio qui omnis, inventore temporibus nemo ratione ducimus, tempore adipisci maiores quisquam atque culpa quae praesentium?</li>
+                  <li>Aliquam, hic aspernatur rem distinctio sunt eaque unde inventore corrupti officiis perspiciatis nesciunt excepturi quo veritatis dolorem nemo repellendus, incidunt in saepe repudiandae ad sint culpa.</li>
+                  <li>Blanditiis saepe sint odit obcaecati soluta optio est repudiandae nihil ullam, expedita, officia cumque, vel exercitationem maiores eaque nam fugiat.</li>
+                </ul>
+              </div>
+
+              <!-- Job Skills -->
+              <div class="job-skills">
+                <ul>
+                  <li>Apex/Java</li>
+                  <li>SQL</li>
+                  <li>JSON</li>
+                  <li>GitHub</li>
+                  <li>Jenkins</li>
+                  <li>Postman</li>
+                  <li>Salesforce</li>
+                </ul>
+              </div>
+            </div>
+            <div class="right-side">
+              <img class="company-logo" src="../assets/companies/salesforce_logo.png" alt="Salesforce">
+            </div>
+          </div>
+
+          <!-- Amazon Job -->
+          <div class="job-header" id="amazon">
+            <div class="job-title">
+              <p class="job-position">IT Suppor Engineer Intern</p>
+              <p class="employer">Amazon</p>
+            </div>
+            <div class="job-period">Mar 2021 - May 2021</div>
+            <div class="job-icon">
+              <i class="inner-icon fa-solid fa-plus" id="amazon" onclick="handleJobCards()"></i>
+            </div>
+          </div>
+
+          <div class="job-card hide" id="amazon">
+            <div class="left-side">
+              <!-- Job Location -->
+              <div class="job-location">
+                <i class="location-icon fa-solid fa-location-dot"></i>
+                <p>Passo Corese (RI), Italy</p>
+              </div>
+
+              <!-- Job Description -->
+              <div class="job-description" id="job-description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et cumque reprehenderit nesciunt obcaecati voluptas asperiores odit praesentium sunt impedit facilis optio dolore, ea incidunt sit quam.
+                <p class="more-details" id="amazon" onclick="handleCardDetails()">More Details...</p>
+                
+                <ul class="extra-info hide" id="amazon">
+                  <li>Aliquam ipsum neque explicabo quo, nesciunt quisquam, illo quas sint tempore distinctio harum delectus magnam.</li>
+                </ul>
+              </div>
+
+              <!-- Job Skills -->
+              <div class="job-skills">
+                <ul>
+                  <li>Python</li>
+                  <li>JavaScript</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                </ul>
+              </div>
+            </div>
+            <div class="right-side">
+              <img class="company-logo" src="../assets/companies/amazon_logo_white.png" alt="Amazon">
+            </div>
+          </div>
+
         </div>
 
       </div>

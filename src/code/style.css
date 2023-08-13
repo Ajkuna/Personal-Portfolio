@@ -4,19 +4,19 @@
   --dark-background-color: #2b2b2b;
   --dark-text-color: #fff;
   --dark-icon-color: #fff;
-  --dark-secondary-color: #FF7538;
+  --dark-primary-color: #a34a46;
 
   /* Light Theme */
   --light-background-color: #fff;
   --light-text-color: #000;
   --light-icon-color: #f1c515;
-  --light-secondary-color: #ff6f00;
+  --light-primary-color: #ff6f00;
 }
 
 body {
   padding: 0;
   margin: 0;
-  background: linear-gradient(167deg, rgb(27, 37, 54) 100%, rgb(44, 17, 61) 0%);
+  background: #201b31;
 
   font-family: 'Montserrat', sans-serif;
 }
@@ -24,7 +24,7 @@ body {
 .cursor {
   width: 26px;
   height: 26px;
-  border: 1px solid var(--dark-secondary-color);
+  border: 1px solid var(--dark-primary-color);
   border-radius: 50%;
   position: absolute;
   transition-duration: 100ms;
@@ -36,7 +36,7 @@ body {
 .mini-cursor {
   width: 8px;
   height: 8px;
-  background-color: var(--dark-secondary-color);
+  background-color: var(--dark-primary-color);
   border-radius: 50%;
   position: absolute;
   transition-duration: 66ms;
@@ -103,7 +103,7 @@ body {
 }
 
 .page-links li:hover a {
-  background-color: var(--dark-secondary-color);
+  background-color: var(--dark-primary-color);
   border-radius: 10px;
   transition: all 0.75s ease;
 }
@@ -186,7 +186,7 @@ body {
   opacity: 0.5;
 }
 
-@keyframes infiniteupdown {
+/* @keyframes infiniteupdown {
   0% {
     transform: translateY(1.5px);
   }
@@ -198,7 +198,7 @@ body {
   100% {
     transform: translateY(1.5px);
   }
-}
+} */
 
 .socials-container ul li:last-child img {
   margin-right: 0;
@@ -227,7 +227,7 @@ body {
 
   font-size: 20px;
   letter-spacing: 2px;
-  color: var(--dark-secondary-color);
+  color: var(--dark-primary-color);
 }
 
 .section-content {
@@ -286,7 +286,7 @@ body {
 }
 
 .skill-selected {
-  background-color: var(--dark-secondary-color);
+  background-color: var(--dark-primary-color);
   border-radius: 10px 10px 0 0 ;
 }
 
@@ -308,17 +308,22 @@ body {
 }
 
 .job-header {
-  width: 60%;
+  margin-top: 1.5rem;
+  /* width: 60%; */
   display: flex;
   flex-direction: row;
   border-radius: 8px;
-  background-color: rgb(15, 16, 39);
-  border: 1px solid white;
+  background-color: #823b3794;
+  /* border: 1px solid white; */
+}
+
+.open-header {
+  background-color: var(--dark-primary-color);
 }
 
 .job-title {
-  width: 65%;
-  border: 1px solid orange;
+  width: 55%;
+  /* border: 1px solid orange; */
   display: flex;
   flex-direction: column;
   padding: 0.5rem 1.5rem;
@@ -338,11 +343,11 @@ body {
 }
 
 .job-period {
-  width: 25%;
+  width: 35%;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
-  border: 1px solid aqua;
+  float: right;
+  /* border: 1px solid aqua; */
 }
 
 .job-icon {
@@ -358,22 +363,23 @@ body {
 }
 
 .job-icon i:hover {
-  color: var(--dark-secondary-color);
+  color: var(--dark-primary-color);
   transition: all 0.3s ease;
 }
 
 
 /* Job Card */
 .job-card {
-  width: 60%;
-  margin-top: 1.25rem;
+  /* width: 60%; */
+  margin-top: 0.75rem;
   display: flex;
   flex-direction: row;
   border-radius: 8px;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   padding: 1.5rem;
-  background-color: rgba(15, 16, 39, 0.3);
+  background-color: rgba(85, 43, 67, 0.5);
 }
+
 
 .left-side {
   width: 80%;
@@ -388,16 +394,20 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* border: 1px solid blue; */
+  font-size: 16px;
   margin-top: -1rem;
 }
 
 .location-icon {
-  color: var(--dark-secondary-color);
+  color: var(--dark-primary-color);
 }
 
 .job-location p {
-  padding-left: 1rem;
+  padding-left: 0.75rem;
+}
+
+.job-description {
+  font-size: 18px;
 }
 
 .more-details {
@@ -408,7 +418,7 @@ body {
 }
 
 .more-details:hover {
-  color: var(--dark-secondary-color);
+  color: var(--dark-primary-color);
   font-weight: 600;
   transition: color 0.3s ease;
 }
@@ -424,7 +434,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   /* border: 1px solid red; */
-  padding: 0;
+  padding: 0.5rem 0 0 0;
   margin: 0;
 }
 
@@ -433,8 +443,11 @@ body {
   padding: 0.25rem 0.75rem;
   display: flex;
   align-items: center;
-  background-color: var(--dark-secondary-color);
+  background-color: #38406eab;
+  color: #7288ff;
   border-radius: 15px;
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .right-side {
@@ -533,11 +546,11 @@ body.light-mode {
 }
 
 .light-mode .cursor {
-  border: 1px solid var(--light-secondary-color);
+  border: 1px solid var(--light-primary-color);
 }
 
 .light-mode .mini-cursor {
-  background-color: var(--light-secondary-color);
+  background-color: var(--light-primary-color);
 }
 
 .light-mode .indicator {

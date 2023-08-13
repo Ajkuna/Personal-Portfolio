@@ -111,20 +111,37 @@ function handleJobCards() {
   console.log('Dealing with JOBS!')
   const selectedJob = event.target.id
   console.log('User selected this job: ' + selectedJob)
-  const jobIcon = document.querySelector('.inner-icon')
-  if (jobIcon.classList.contains('fa-plus')) {
-    // setThemeValue(false)
-    jobIcon.classList.remove('fa-plus')
-    jobIcon.classList.add('fa-minus')
-  } else {
-    // setThemeValue(true)
-    jobIcon.classList.remove('fa-minus')
-    jobIcon.classList.add('fa-plus')
-  }
+  let isJobOpen = false
 
-  const jobs = document.querySelectorAll('.job-card')
-  jobs.forEach(item => {
-    if (item.id == selectedJob && jobIcon.classList.contains('fa-minus')) {
+  const iconsList = document.querySelectorAll('.inner-icon')
+  iconsList.forEach(icon => {
+    if (icon.id === selectedJob) {
+      if (icon.classList.contains('fa-plus')) {
+        isJobOpen = true
+        icon.classList.remove('fa-plus')
+        icon.classList.add('fa-minus')
+      } else {
+        icon.classList.remove('fa-minus')
+        icon.classList.add('fa-plus')
+      }
+    } else {
+      icon.classList.remove('fa-minus')
+      icon.classList.add('fa-plus')
+    }
+  })
+
+  const jobHeaders = document.querySelectorAll('.job-header')
+  jobHeaders.forEach(item => {
+    if (item.id === selectedJob && isJobOpen) {
+      item.classList.add('open-header')
+    } else {
+      item.classList.remove('open-header')
+    }
+  })
+
+  const jobCards = document.querySelectorAll('.job-card')
+  jobCards.forEach(item => {
+    if (item.id === selectedJob && isJobOpen) {
       item.classList.remove('hide')
     } else {
       item.classList.add('hide')
