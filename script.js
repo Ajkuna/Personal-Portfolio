@@ -1,3 +1,4 @@
+onLoad()
 createStars()
 
 function createStars() {
@@ -26,6 +27,25 @@ function createStars() {
 }
 
 
+
+function onLoad() {
+  openFirstAccordion()
+}
+
+function openFirstAccordion() {
+  const accordionContent = document.querySelectorAll('.accordion-content')
+  
+  accordionContent.forEach((item, index) => {
+    if (index == 0) {
+      item.classList.add('open')
+
+      let description = item.querySelector('.description')
+      description.style.height = `${description.scrollHeight}px`
+      item.querySelector('i').classList.replace('fa-plus', 'fa-minus')
+    }
+  })
+}
+
 const accordionContent = document.querySelectorAll('.accordion-content')
 accordionContent.forEach((item, index) => {
   handleAccordion(item, index)
@@ -37,26 +57,35 @@ function handleAccordion(item, index) {
     item.classList.toggle('open')
 
     let description = item.querySelector('.description')
+
     if (item.classList.contains('open')) {
-      header.classList.remove('open')
+      // Opening the job card
+      header.classList.remove('closed')
 
       description.style.height = `${description.scrollHeight}px`
       item.querySelector('i').classList.replace('fa-plus', 'fa-minus')
     } else {
-      header.classList.add('open')
+      // Closing the job card
+      header.classList.add('closed')
 
       description.style.height = '0px'
       item.querySelector('i').classList.replace('fa-minus', 'fa-plus')
+
+      let detailsSection = item.querySelector('.extra-details')
+      detailsSection.classList.add('hide')
     }
 
-    removeOpen(index)
+    removeOpen(item)
   })
 }
 
-function removeOpen(inputIndex) {
+function removeOpen(inputItem) {
   accordionContent.forEach((item, index) => {
-    if (inputIndex != index) {
+    if (inputItem != item) {
       item.classList.remove('open')
+
+      let header = item.querySelector('.header')
+      header.classList.add('closed')
 
       let description = item.querySelector('.description')
       description.style.height = '0px'
@@ -67,9 +96,23 @@ function removeOpen(inputIndex) {
 
 
 const detailsButtons = document.querySelectorAll('.details-button')
-detailsButtons.forEach((item, index) => {
+detailsButtons.forEach(item => {
   item.addEventListener('click', () => {
     let detailsSection = item.querySelector('.extra-details')
+    const detailsSectionHeight = detailsSection.scrollHeight
     detailsSection.classList.toggle('hide')
+
+    // Adjust the height of the corresponding job card
+    const descriptionSections = document.querySelectorAll('.description')
+    descriptionSections.forEach(description => {
+      if (description.id == item.id) {
+        if (detailsSection.classList.contains('hide')) {
+          const newHeight = description.scrollHeight - detailsSectionHeight
+          description.style.height = `${newHeight}px`
+        } else {
+          description.style.height = `${description.scrollHeight}px`
+        }
+      }
+    })
   })
 })

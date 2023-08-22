@@ -461,15 +461,15 @@ body {
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  background: #591387;
+  background: #9300cd;
   border-radius: 8px;
 
   transition: all 0.2s linear;
 }
 
-.accordion-content .header .open {
-  background: #7f07ce;
-  color: red;
+.accordion-content .closed {
+  background: #56048d;
+  color: #ffffffd8;
 }
 
 .accordion-content .header .title {
