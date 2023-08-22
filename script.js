@@ -34,16 +34,11 @@ function onLoad() {
 
 function openFirstAccordion() {
   const accordionContent = document.querySelectorAll('.accordion-content')
-  
-  accordionContent.forEach((item, index) => {
-    if (index == 0) {
-      item.classList.add('open')
+  accordionContent[0].classList.add('open')
 
-      let description = item.querySelector('.description')
-      description.style.height = `${description.scrollHeight}px`
-      item.querySelector('i').classList.replace('fa-plus', 'fa-minus')
-    }
-  })
+  let description = accordionContent[0].querySelector('.description')
+  description.style.height = `${description.scrollHeight}px`
+  accordionContent[0].querySelector('i').classList.replace('fa-plus', 'fa-minus')
 }
 
 const accordionContent = document.querySelectorAll('.accordion-content')

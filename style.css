@@ -555,6 +555,7 @@ body {
 }
 
 .details-button ul {
+  padding-right: 2.5rem;
   font-size: 16px;
 }
 
@@ -601,4 +602,57 @@ body {
 
 .projects { 
   padding-top: 4rem;
+}
+
+
+
+.hamburger-menu {
+  display: none;
+  visibility: hidden;
+
+  color: #fff;
+  font-size: 32px;
+  padding: 0.5rem 0.5rem;
+  cursor: pointer;
+}
+
+.mobile-navbar {
+  display: none;
+  visibility: hidden;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 300px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(8px);
+}
+
+.mobile-links {
+  list-style: none;
+}
+
+.mobile-links li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .hamburger-menu,
+  .mobile-navbar {
+    display: block;
+    visibility: visible;
+  }
+
+  .index-links {
+    display: none;
+    visibility: hidden;
+  }
 }
