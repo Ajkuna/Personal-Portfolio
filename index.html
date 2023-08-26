@@ -72,13 +72,13 @@
 
       <!-- Homepage -->
       <div class="homepage">
-        <div class="my-intro">
-          <h1>
-            Hi,<br>
-            my name is <span class="my-name">First Last</span><br>
-            and I'm a <span class="my-role neon-text">Software Developer.</span>
-          </h1>
-        </div>
+        <!-- <h1 class="my-intro">
+          Hi,
+          my name is <span class="my-name">Lorena Zotaj</span>
+          and I'm a <span class="my-role neon-text">Software Developer.
+        </h1> -->
+        <h1 class="my-intro">
+        </h1>
 
         <div class="socials">
           <ul>
@@ -396,24 +396,170 @@
 
       <div class="section-content">
 
+        <div class="projects-intro">
+          <p>Throughout the years, I enjoyed <span class="important">learning and experimenting</span> with different technologies as a self-learner.</p>
+          <p>Although some of them might be relatively simple or rudimental, they've all hugely helped me in gaining the <span class="important">experience and knowledge</span> that led me to be <span class="important">who I am</span> today.
+          </p>
+          <p class="different">Feel free to have a look (make sure to click on the project to know more about it)!</p>
+        </div>
+
         <!-- Filters -->
         <div class="filters-bar">
           <ul>
-            <li class="filter active-filter">All</li>
-            <li class="filter">Web</li>
-            <li class="filter">Desktop</li>
-            <li class="filter">Mobile</li>
+            <li class="filter active-filter" data-filter="all">All</li>
+            <li class="filter" data-filter="web">Web</li>
+            <li class="filter" data-filter="desktop">Desktop</li>
+            <li class="filter" data-filter="mobile">Mobile</li>
           </ul>
+        </div>
+
+        <div class="projects-container">
+
+          <div class="project-card desktop">
+            <div class="see-more dark">
+              <p>See Details</p>
+            </div>
+            <div class="project-tags">
+              <div class="tag">Desktop App</div>
+            </div>
+            <div class="project-image">
+              <img class="project-gif" src="src/assets/thumbnails/sortingVisualizer_thumbnail.gif">
+            </div>
+            <div class="project-title">
+              <h3>Sorting Visualizer</h3>
+            </div>
+          </div>
+
+          <div class="project-card desktop">
+            <div class="see-more">
+              <p>See Details</p>
+            </div>
+            <div class="project-tags">
+              <div class="tag">Videogame</div>
+            </div>
+            <div class="project-image">
+              <img class="project-gif" src="src/assets/thumbnails/spaceAdventures(gif).gif">
+            </div>
+            <div class="project-title">
+              <h3>Space Adventures</h3>
+            </div>
+          </div>
+
+          <div class="project-card web">
+            <div class="see-more">
+              <p>See Details</p>
+            </div>
+            <div class="project-tags">
+              <div class="tag">Web Projects</div>
+            </div>
+            <div class="project-image">
+              <img class="project-gif" src="src/assets/thumbnails/trailhead_thumbnail_v2.jpg">
+            </div>
+            <div class="project-title">
+              <h3>Trailhead Training</h3>
+            </div>
+          </div>
+
+          <div class="project-card mobile">
+            <div class="see-more">
+              <p>See Details</p>
+            </div>
+            <div class="project-tags">
+              <div class="tag">Mobile App</div>
+            </div>
+            <div class="project-image">
+              <img class="project-gif" src="src/assets/thumbnails/javaCalculator_thumbnail.gif">
+            </div>
+            <div class="project-title">
+              <h3>Simple Calculator</h3>
+            </div>
+          </div>
+
+          <div class="project-card web">
+            <div class="see-more dark">
+              <p>See Details</p>
+            </div>
+            <div class="project-tags">
+              <div class="tag">Web App</div>
+            </div>
+            <div class="project-image">
+              <img class="project-gif" src="src/assets/thumbnails/budgetCalculator_thumbnail.gif">
+            </div>
+            <div class="project-title">
+              <h3>Budget Calculator</h3>
+            </div>
+          </div>
+
+          <div class="project-card mobile">
+            <div class="see-more">
+              <p>See Details</p>
+            </div>
+            <div class="project-tags">
+              <div class="tag">Mobile App</div>
+            </div>
+            <div class="project-image">
+              <img class="project-gif" src="src/assets/thumbnails/fiscally_thumbnail.png">
+            </div>
+            <div class="project-title">
+              <h3>Fiscally</h3>
+            </div>
+          </div>
+
         </div>
 
       </div>
     </div>
 
+    <!-- Footer -->
+    <div class="footer">
+      <!-- <div class="footer-name">Lorena Zotaj</div> -->
+      <div class="footer-socials">
+        <ul>
+          <li><i class="fa-brands fa-linkedin"></i></li>
+          <li><i class="fa-brands fa-github"></i></li>
+          <li><i class="fa-regular fa-envelope"></i></li>
+          <li><i class="fa-regular fa-file"></i></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </div>
+      <div class="copyright">&copy; 2023 | Developed and designed by Lorena Zotaj.</div>
+    </div>
 
   </div>
 
   <!-- JS link -->
   <script src="./script.js"></script>
+
+  <!-- Projects section functionality -->
   <script src="./code.jquery.com_jquery-3.7.0.js"></script>
+  <script type="text/javascript">
+    // Projects filters buttons
+    $(document).on('click', '.filter', function() {
+      $(this).addClass('active-filter').siblings().removeClass('active-filter')
+    })
+
+    // Projects Cards
+    $(document).ready( function() {
+      $('.filter').click( function() {
+        const value = $(this).attr('data-filter')
+        if (value == 'all') {
+          $('.project-card').show('1000')
+        } else {
+          $('.project-card').not('.' + value).hide('1000')
+          $('.project-card').filter('.' + value).show('1000')
+        }
+      })
+    })
+
+
+  </script>
+
 </body>
 </html>

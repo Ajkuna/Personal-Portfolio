@@ -117,10 +117,16 @@ detailsButtons.forEach(item => {
 
 
 
-// Projects + Filtering logic
-const filtersButtons = document.querySelectorAll('.filter')
-// filtersButtons.forEach(item => {
-//   item.addEventListener('click', () => {
+var i = 0
+var txt = 'Hi, my name is Lorena Zotaj and I\'m a Software Developer.' /* The text */
+var speed = 35 /* The speed/duration of the effect in milliseconds */
 
-//   })
-// })
+function typeWriter() {
+  if (i < txt.length) {
+    document.querySelector('.my-intro').innerHTML += txt.charAt(i)
+    i++
+    setTimeout(typeWriter, speed)
+  }
+}
+
+typeWriter()
