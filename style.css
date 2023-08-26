@@ -604,6 +604,47 @@ body {
   padding-top: 4rem;
 }
 
+.filters-bar {
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filters-bar ul {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  list-style: none;
+}
+
+.filter {
+  font-family: 'Inconsolata', sans-serif;
+  padding: 0.5rem 1rem;
+  font-size: 18px;
+  font-style: oblique;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.active-filter {
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  color: #9300cd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .hamburger-menu {

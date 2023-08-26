@@ -13,11 +13,14 @@ function createStars() {
     let y = Math.floor(Math.random() * (window.innerHeight - 5))
     let duration = Math.random() * 10
     let size = Math.random() * 2
+    console.log('size: ' + size)
 
     star.style.left = x + 'px'
     star.style.top = y + 'px'
-    star.style.width = 1 + size + 'px'
-    star.style.height = 1 + size + 'px'
+    star.style.width = 1.5 + size + 'px'
+    star.style.height = 1.5 + size + 'px'
+    star.style.opacity = size / 2
+
     star.style.animationDuration = 5 + duration + 's'
     star.style.animationDelay = duration + 's'
 
@@ -111,3 +114,13 @@ detailsButtons.forEach(item => {
     })
   })
 })
+
+
+
+// Projects + Filtering logic
+const filtersButtons = document.querySelectorAll('.filter')
+// filtersButtons.forEach(item => {
+//   item.addEventListener('click', () => {
+
+//   })
+// })
