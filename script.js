@@ -22,7 +22,6 @@ function createStars() {
     let y = Math.floor(Math.random() * (window.innerHeight - 5))
     let duration = Math.random() * 10
     let size = Math.random() * 2
-    console.log('size: ' + size)
 
     star.style.left = x + 'px'
     star.style.top = y + 'px'
@@ -133,8 +132,6 @@ detailsButtons.forEach(item => {
 document.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar')
   const scrollButton = document.querySelector('.scroll-up')
-  console.log('innerHeight: ' + window.innerHeight)
-  console.log('scrollY: ' + window.scrollY)
 
   if (window.scrollY > (window.innerHeight - 25)) {
     navbar.classList.add('sticky-navbar')
