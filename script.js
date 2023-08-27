@@ -164,3 +164,55 @@ function closeEmailPopup() {
   emailPopup.style.display = 'none'
   emailPopup.style.visibility = 'hidden'
 }
+
+
+
+// Open Project Modals
+function openProjectModal(item) {
+  const projectName = item.id
+  console.log('project ID: ' + projectName)
+
+  const pageMask = document.querySelector('.page-mask')
+  pageMask.style.display = 'block'
+  pageMask.style.visibility = 'visible'
+
+  const projectModals = document.querySelectorAll('.project-modal')
+  projectModals.forEach(modal => {
+    if (modal.id == projectName) {
+      modal.style.display = 'block'
+      modal.style.visibility = 'visible'
+    } else {
+      modal.style.display = 'none'
+      modal.style.visibility = 'hidden'
+    }
+  })
+}
+
+// Close Project Modals
+function closeProjectModals() {
+  const projectModals = document.querySelectorAll('.project-modal')
+  projectModals.forEach(modal => {
+    modal.style.display = 'none'
+    modal.style.visibility = 'hidden'
+  })
+
+  const pageMask = document.querySelector('.page-mask')
+  pageMask.style.display = 'none'
+  pageMask.style.visibility = 'hidden'
+}
+
+
+
+// Open Mobile Menu
+function openMobileMenu() {
+  const mobileMenu = document.querySelector('.mobile-navbar')
+  mobileMenu.style.display = 'block'
+  mobileMenu.style.visibility = 'visible'
+}
+
+// Close Mobile Menu
+function closeMobileMenu() {
+  const mobileMenu = document.querySelector('.mobile-navbar')
+  mobileMenu.style.display = 'none'
+  mobileMenu.style.visibility = 'hidden'
+}

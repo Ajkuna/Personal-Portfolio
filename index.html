@@ -51,21 +51,19 @@
           </ul>
         </div>
 
-        <div class="hamburger-menu">
+        <div class="hamburger-menu" onclick="openMobileMenu()">
           <i class="fa-solid fa-bars"></i>
         </div>
 
         <!-- Mobile menu -->
         <div class="mobile-navbar">
+          <i class="close-menu fa-solid fa-xmark" onclick="closeMobileMenu()"></i>
+
           <ul class="mobile-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
-          </ul>
-
-          <ul class="mobile-socials">
-            Social Links here!
           </ul>
         </div>
 
@@ -452,10 +450,11 @@
           </ul>
         </div>
 
+        <!-- Project Cards -->
         <div class="projects-container">
 
           <div class="project-card desktop">
-            <div class="see-more dark">
+            <div class="see-more dark" id="sorting-visualizer" onclick="openProjectModal(this)">
               <p>See Details</p>
             </div>
             <div class="project-tags">
@@ -470,7 +469,7 @@
           </div>
 
           <div class="project-card desktop">
-            <div class="see-more">
+            <div class="see-more" id="space-adventures" onclick="openProjectModal(this)">
               <p>See Details</p>
             </div>
             <div class="project-tags">
@@ -485,7 +484,7 @@
           </div>
 
           <div class="project-card web">
-            <div class="see-more">
+            <div class="see-more" id="trailhead" onclick="openProjectModal(this)">
               <p>See Details</p>
             </div>
             <div class="project-tags">
@@ -500,7 +499,7 @@
           </div>
 
           <div class="project-card mobile">
-            <div class="see-more">
+            <div class="see-more" id="java-calculator" onclick="openProjectModal(this)">
               <p>See Details</p>
             </div>
             <div class="project-tags">
@@ -515,7 +514,7 @@
           </div>
 
           <div class="project-card web">
-            <div class="see-more dark">
+            <div class="see-more dark" id="budget-calculator" onclick="openProjectModal(this)">
               <p>See Details</p>
             </div>
             <div class="project-tags">
@@ -530,7 +529,7 @@
           </div>
 
           <div class="project-card mobile">
-            <div class="see-more">
+            <div class="see-more" id="fiscally" onclick="openProjectModal(this)">
               <p>See Details</p>
             </div>
             <div class="project-tags">
@@ -546,20 +545,257 @@
 
         </div>
 
+        <!-- Project Popups -->
+        <div class="project-popups">
+
+          <div class="page-mask"></div>
+
+          <div class="project-modal" id="sorting-visualizer">
+            <div class="modal-title">Sorting Visualizer</div>
+            <div class="modal-description">Popular sorting algorithms visualizer</div>
+
+            <div class="modal-close" onclick="closeProjectModals()"><i class="fa-solid fa-xmark"></i></div>
+            
+            <div class="inner-modal">
+            
+              <div class="modal-info">
+                <div class="modal-details">
+                  <ul>
+                    <li>Desktop application for visualizing various sorting algorithms (Bubble Sort, Insertion Sort, Selection Sort and Quick Sort)</li>
+                    <li>User friendly interface to allow a proper step-by-step comprehension of each algorithm</li>
+                  </ul>
+                </div>
+                <div class="modal-stack">
+                  <ul>
+                    <li>Python</li>
+                    <li>Tkinter</li>
+                    <li>Sorting Algorithms</li>
+                  </ul>
+                </div>
+                <div class="modal-github">
+                  <i class="fa-brands fa-github"></i>
+                  <a href="https://github.com/Ajkuna/SortingVisualizer"><p>GitHub</p></a>
+                </div>
+              </div>
+
+              <div class="modal-image">
+                <img src="src/assets/thumbnails/sortingVisualizer_thumbnail.gif" alt="">
+              </div>
+
+            </div>
+          </div>
+
+          <div class="project-modal" id="space-adventures">
+            <div class="modal-title">Space Adventures</div>
+            <div class="modal-description">Interactive Arcade Videogame</div>
+
+            <div class="modal-close" onclick="closeProjectModals()"><i class="fa-solid fa-xmark"></i></div>
+            
+            <div class="inner-modal">
+            
+              <div class="modal-info">
+                <div class="modal-details">
+                  <ul>
+                    <li>Arcade-style videogame built using Pygame library</li>
+                    <li>Includes sound effects and handles objects dynamics</li>
+                  </ul>
+                </div>
+                <div class="modal-stack">
+                  <ul>
+                    <li>Python</li>
+                    <li>Pygame</li>
+                  </ul>
+                </div>
+                <div class="modal-github">
+                  <i class="fa-brands fa-github"></i>
+                  <a href="https://github.com/Ajkuna/SpaceAdventures"><p>GitHub</p></a>
+                </div>
+              </div>
+
+              <div class="modal-image">
+                <img src="src/assets/thumbnails/spaceAdventures(gif).gif" alt="">
+              </div>
+
+            </div>
+          </div>
+
+          <div class="project-modal" id="trailhead">
+            <div class="modal-title">Trailhead Projects</div>
+            <div class="modal-description">Salesforce Training Projects</div>
+
+            <div class="modal-close" onclick="closeProjectModals()"><i class="fa-solid fa-xmark"></i></div>
+            
+            <div class="inner-modal">
+            
+              <div class="modal-info">
+                <div class="modal-details">
+                  <ul>
+                    <li>Some text here</li>
+                    <li>Some other text here</li>
+                  </ul>
+                </div>
+                <div class="modal-stack">
+                  <ul>
+                    <li>Apex/Java</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>SQL</li>
+                    <li>Salesforce Lightning</li>
+                  </ul>
+                </div>
+                <!-- <div class="modal-github">
+                  <i class="fa-brands fa-github"></i>
+                  <a href="#"><p>GitHub</p></a>
+                </div> -->
+              </div>
+
+              <div class="modal-image">
+                <img src="src/assets/thumbnails/trailhead_thumbnail_v2.jpg" alt="">
+              </div>
+
+            </div>
+          </div>
+
+          <div class="project-modal" id="java-calculator">
+            <div class="modal-title">Simple Calculator</div>
+            <div class="modal-description">Java Calculator</div>
+
+            <div class="modal-close" onclick="closeProjectModals()"><i class="fa-solid fa-xmark"></i></div>
+            
+            <div class="inner-modal">
+            
+              <div class="modal-info">
+                <div class="modal-details">
+                  Very simple calculator desktop app built using JavaFX
+                </div>
+                <div class="modal-stack">
+                  <ul>
+                    <li>Java</li>
+                    <li>JavaFX</li>
+                  </ul>
+                </div>
+                <div class="modal-github">
+                  <i class="fa-brands fa-github"></i>
+                  <a href="https://github.com/Ajkuna/Java-Calculator"><p>GitHub</p></a>
+                </div>
+              </div>
+
+              <div class="modal-image">
+                <img src="src/assets/thumbnails/javaCalculator_thumbnail.gif" alt="">
+              </div>
+
+            </div>
+          </div>
+
+          <div class="project-modal" id="budget-calculator">
+            <div class="modal-title">Budget Calculator</div>
+            <div class="modal-description">Angular Web App</div>
+
+            <div class="modal-close" onclick="closeProjectModals()"><i class="fa-solid fa-xmark"></i></div>
+            
+            <div class="inner-modal">
+            
+              <div class="modal-info">
+                <div class="modal-details">
+                  <ul>
+                    <li>Simple front-end webpage to keep track of personal incomes and expenses</li>
+                    <li>Made use of Angular Components and Bulma</li>
+                  </ul>
+                </div>
+                <div class="modal-stack">
+                  <ul>
+                    <li>Angular</li>
+                    <li>TypeScript</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Bulma</li>
+                  </ul>
+                </div>
+                <div class="modal-github">
+                  <i class="fa-brands fa-github"></i>
+                  <a href="https://github.com/Ajkuna/BudgetCalculator"><p>GitHub</p></a>
+                </div>
+              </div>
+
+              <div class="modal-image">
+                <img src="src/assets/thumbnails/budgetCalculator_thumbnail.gif" alt="">
+              </div>
+
+            </div>
+          </div>
+
+          <div class="project-modal" id="fiscally">
+            <div class="modal-title">Fiscally</div>
+            <div class="modal-description">Fiscal Code Generation and Storage App</div>
+
+            <div class="modal-close" onclick="closeProjectModals()"><i class="fa-solid fa-xmark"></i></div>
+            
+            <div class="inner-modal">
+            
+              <div class="modal-info">
+                <div class="modal-details">
+                  <ul>
+                    <li>Mobile app that calculates your fiscal code and stores it, along with its respective barcode (created using the ZXing library)</li>
+                    <li>Includes a local database for storing the various fiscal code entries</li>
+                  </ul>
+                </div>
+                <div class="modal-stack">
+                  <ul>
+                    <li>Kotlin</li>
+                    <li>Compose</li>
+                    <li>Room</li>
+                    <li>SQLite</li>
+                    <li>ZXing</li>
+                    <li>Android Studio</li>
+                  </ul>
+                </div>
+                <div class="modal-github">
+                  <i class="fa-brands fa-github"></i>
+                  <a href="https://github.com/Ajkuna/Fiscally"><p>GitHub</p></a>
+                </div>
+              </div>
+
+              <div class="modal-image">
+                <img src="src/assets/thumbnails/fiscally_thumbnail.png" alt="">
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </div>
 
     <!-- Footer -->
     <div class="footer">
-      <!-- <div class="footer-name">Lorena Zotaj</div> -->
+      
       <div class="footer-socials">
         <ul>
-          <li><i class="fa-brands fa-linkedin"></i></li>
-          <li><i class="fa-brands fa-github"></i></li>
-          <li><i class="fa-regular fa-envelope"></i></li>
-          <li><i class="fa-regular fa-file"></i></li>
+          <ul>
+            <li>
+              <a href="https://www.linkedin.com/in/lorena-zotaj/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Ajkuna" target="_blank">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </li>
+            <li class="email-icon" onclick="copyEmailToClipboard()">
+              <i class="fa-regular fa-envelope"></i>
+            </li>
+            <li>
+              <a href="src\assets\resume\Resume - Lorena Zotaj (2023).pdf" target="_blank">
+                <i class="fa-regular fa-file"></i>
+              </a>
+            </li>
+          </ul>
         </ul>
       </div>
+
       <div class="footer-links">
         <ul>
           <li><a href="#home">Home</a></li>
@@ -568,6 +804,7 @@
           <li><a href="#projects">Projects</a></li>
         </ul>
       </div>
+
       <div class="copyright">&copy; 2023 | Developed and designed by Lorena Zotaj.</div>
     </div>
 

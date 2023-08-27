@@ -55,7 +55,7 @@ body {
 
   display: none;
   visibility: hidden;
-  z-index: 99;
+  z-index: 98;
 }
 
 .scroll-up a {
@@ -965,6 +965,163 @@ body {
 
 
 
+.page-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 200;
+
+  display: none;
+  visibility: hidden;
+}
+
+.project-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 3rem;
+  /* background: #441365; */
+  background: #2f2939;
+  border-radius: 8px;
+
+  border: 3.5px solid #efa9ff;
+  border-radius: 8px;
+  box-shadow: 
+    inset 0 0 5px #9900ff, 
+    inset 0 0 10px #9900ff,
+    inset 0 0 17px #9900ff,
+    inset 0 0 25px #441365, 
+    inset 0 0 35px #441365,
+
+    0 0 5px #9900ff, 
+    0 0 10px #9900ff,
+    0 0 17px #9900ff,
+    0 0 25px #441365, 
+    0 0 35px #441365;
+
+  z-index: 250;
+
+  display: none;
+  visibility: hidden;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 22px;
+  color: #a0a0a0;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #efa9ff;
+  text-shadow: 
+    0 0 5px #9900ff, 
+    0 0 10px #9900ff,
+    0 0 15px #9900ff, 
+    0 0 20px #9900ff, 
+    0 0 40px #9900ff, 
+    0 0 60px #441365, 
+    0 0 75px #441365;
+}
+
+.modal-title {
+  color: #a0a0a0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.modal-description {
+  padding-top: 0.25rem;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  color: #efa9ff;
+  text-shadow: 
+    0 0 5px #9900ff, 
+    0 0 10px #9900ff,
+    0 0 17px #9900ff,
+    0 0 25px #441365, 
+    0 0 35px #441365;
+}
+
+.inner-modal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.modal-info {
+  width: 65%;
+}
+
+.modal-stack ul {
+  padding: 0;
+  margin-top: 1.5rem;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.modal-stack li {
+  font-family: 'Inconsolata', sans-serif;
+  padding: 0.25rem 0.75rem;
+  margin-right: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 30px;
+
+  background: #7e0cca;
+  color: #fff;
+}
+
+.modal-github {
+  font-family: 'Inconsolata', sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.modal-github a {
+  padding-left: 0.5rem;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal-github a:hover {
+  text-decoration: underline;
+}
+
+.modal-image {
+  width: 35%;
+  padding: 0 0 1rem 1rem;
+}
+
+.modal-image img {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
 
 .footer {
   display: flex;
@@ -996,6 +1153,10 @@ body {
   font-size: 24px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.footer-socials ul li a {
+  color: #fff;
 }
 
 .footer-socials ul li:hover {
@@ -1061,20 +1222,33 @@ body {
 
   width: 300px;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.2); 
-  backdrop-filter: blur(8px);
+  background: #441365; 
+  backdrop-filter: blur(10px);
 
   z-index: 99;
 }
 
+.close-menu {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 32px;
+  cursor: pointer;
+}
+
 .mobile-links {
   list-style: none;
+  padding-top: 4rem;
+}
+
+.mobile-links li {
+  padding-bottom: 2.5rem;
 }
 
 .mobile-links li a {
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 26px;
   font-weight: 600;
   color: #fff;
 }
@@ -1082,8 +1256,7 @@ body {
 
 
 @media screen and (max-width: 768px) {
-  .hamburger-menu,
-  .mobile-navbar {
+  .hamburger-menu {
     display: block;
     visibility: visible;
   }
