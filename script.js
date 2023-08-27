@@ -1,6 +1,15 @@
 onLoad()
 createStars()
 
+window.addEventListener('resize', () => {
+  let starsList = document.querySelectorAll('.star')
+  if (starsList.length > 0) {
+    starsList.forEach(star => star.remove())
+  }
+  createStars()
+})
+
+// Create random stars for landing page background with random brighness and animation
 function createStars() {
   let count = 250
   let scene = document.querySelector('body')
@@ -35,6 +44,7 @@ function onLoad() {
   openFirstAccordion()
 }
 
+// Open the first job card in the Experience section on page load
 function openFirstAccordion() {
   const accordionContent = document.querySelectorAll('.accordion-content')
   accordionContent[0].classList.add('open')
@@ -49,6 +59,7 @@ accordionContent.forEach((item, index) => {
   handleAccordion(item, index)
 })
 
+// Opens/closes clicked accordion and changes properties within it
 function handleAccordion(item, index) {
   let header = item.querySelector('.header')
   header.addEventListener('click', () => {
@@ -77,6 +88,7 @@ function handleAccordion(item, index) {
   })
 }
 
+// Closes all the job cards who haven't been opened
 function removeOpen(inputItem) {
   accordionContent.forEach((item, index) => {
     if (inputItem != item) {
@@ -92,7 +104,7 @@ function removeOpen(inputItem) {
   })
 }
 
-
+// Toggle the extra details sections in the job cards
 const detailsButtons = document.querySelectorAll('.details-button')
 detailsButtons.forEach(item => {
   item.addEventListener('click', () => {
@@ -117,16 +129,41 @@ detailsButtons.forEach(item => {
 
 
 
-var i = 0
-var txt = 'Hi, my name is Lorena Zotaj and I\'m a Software Developer.' /* The text */
-var speed = 35 /* The speed/duration of the effect in milliseconds */
+// Sticky Navbar logic
+document.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar')
+  const scrollButton = document.querySelector('.scroll-up')
+  console.log('innerHeight: ' + window.innerHeight)
+  console.log('scrollY: ' + window.scrollY)
 
-function typeWriter() {
-  if (i < txt.length) {
-    document.querySelector('.my-intro').innerHTML += txt.charAt(i)
-    i++
-    setTimeout(typeWriter, speed)
+  if (window.scrollY > (window.innerHeight - 25)) {
+    navbar.classList.add('sticky-navbar')
+    scrollButton.style.display = 'block'
+    scrollButton.style.visibility = 'visible'
+  } else {
+    navbar.classList.remove('sticky-navbar')
+    scrollButton.style.display = 'none'
+    scrollButton.style.visibility = 'hidden'
   }
+})
+
+let globalTimeout = null
+
+
+// Email Popup
+function copyEmailToClipboard() {
+  const emailPopup = document.querySelector('.email-popup')
+  emailPopup.style.display = 'block'
+  emailPopup.style.visibility = 'visible'
+
+  clearTimeout(globalTimeout)
+  globalTimeout = setTimeout(() => {
+    closeEmailPopup()
+  }, '10000')
 }
 
-typeWriter()
+function closeEmailPopup() {
+  const emailPopup = document.querySelector('.email-popup')
+  emailPopup.style.display = 'none'
+  emailPopup.style.visibility = 'hidden'
+}

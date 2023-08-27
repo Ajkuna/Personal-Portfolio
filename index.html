@@ -55,6 +55,7 @@
           <i class="fa-solid fa-bars"></i>
         </div>
 
+        <!-- Mobile menu -->
         <div class="mobile-navbar">
           <ul class="mobile-links">
             <li><a href="#home">Home</a></li>
@@ -70,22 +71,56 @@
 
       </div>
 
+      <!-- Scroll Up button -->
+      <div class="scroll-up">
+        <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+
       <!-- Homepage -->
       <div class="homepage">
-        <!-- <h1 class="my-intro">
-          Hi,
-          my name is <span class="my-name">Lorena Zotaj</span>
-          and I'm a <span class="my-role neon-text">Software Developer.
-        </h1> -->
-        <h1 class="my-intro">
-        </h1>
+        <div class="my-intro">
+          <h1>
+            Hi,<br>
+            my name is <span class="my-name">Lorena Zotaj</span><br>
+            and I'm a <span class="my-role neon-text">Software Developer.</span>
+          </h1>
+        </div>
+
+        <div class="email-popup">
+          <i class="close-email fa-solid fa-xmark" onclick="closeEmailPopup()"></i>
+          <div class="confirmation">
+            <i class="fa-solid fa-check"></i>
+            <p>The email address has been copied to your clipboard!</p>
+          </div>
+          <div class="email-info">
+            <p>In case that didn't work, here's the email for you to copy-paste wherever you like:</p>
+            <p class="email-address">lorenazotaj10@gmail.com</p>
+          </div>
+          <div class="email-timer"></div>
+        </div>
 
         <div class="socials">
           <ul>
-            <li><i class="fa-brands fa-linkedin fa-2xl"></i></li>
-            <li><i class="fa-brands fa-github fa-2xl"></i></li>
-            <li><i class="fa-regular fa-envelope fa-2xl"></i></li>
-            <li><i class="fa-regular fa-file fa-2xl"></i></li>
+            <li>
+              <a href="https://www.linkedin.com/in/lorena-zotaj/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <p class="help-text">LinkedIn</p>
+            </li>
+            <li>
+              <a href="https://github.com/Ajkuna" target="_blank">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <p class="help-text">GitHub</p>
+            </li>
+            <li class="email-icon" onclick="copyEmailToClipboard()">
+              <i class="fa-regular fa-envelope"></i>
+              <p class="help-text">Email</p>
+            </li>
+            <li>
+              <i class="fa-regular fa-file"></i>
+              <p class="help-text">Resume</p>
+            </li>
           </ul>
         </div>
       </div>
@@ -117,7 +152,7 @@
               <div class="slide"><img src="src/assets/skills/html_128.png"></div>
               <div class="slide"><img src="src/assets/skills/css_128.png"></div>
               <div class="slide"><img src="src/assets/skills/javascript_128.png"></div>
-              <div class="slide"><img src="src/assets/skills/sql_128.png"></div>
+              <!-- <div class="slide"><img src="src/assets/skills/sql_128.png"></div> -->
               <div class="slide"><img src="src/assets/skills/git_128.png"></div>
               <div class="slide"><img src="src/assets/skills/salesforce_128.png"></div>
               <div class="slide"><img src="src/assets/skills/azure_logo.png"></div>
@@ -127,7 +162,7 @@
               <div class="slide"><img src="src/assets/skills/html_128.png"></div>
               <div class="slide"><img src="src/assets/skills/css_128.png"></div>
               <div class="slide"><img src="src/assets/skills/javascript_128.png"></div>
-              <div class="slide"><img src="src/assets/skills/sql_128.png"></div>
+              <!-- <div class="slide"><img src="src/assets/skills/sql_128.png"></div> -->
               <div class="slide"><img src="src/assets/skills/git_128.png"></div>
               <div class="slide"><img src="src/assets/skills/salesforce_128.png"></div>
               <div class="slide"><img src="src/assets/skills/azure_logo.png"></div>
@@ -391,7 +426,7 @@
     </div>
 
     <!-- Projects -->
-    <div class="projects">
+    <div class="projects" id="projects">
       <h2 class="section-title neon-text">Personal Projects</h2>
 
       <div class="section-content">
